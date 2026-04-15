@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eleutheria — Luxury Travel Refined</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-text">Eleutheria</span>
+      <span class="logo-sub">Luxury Travel Refined</span>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="book.html">Book Now</a></li>
+      <li><a href="map.html">Explore Map</a></li>
+      <li><a href="stay.html">Your Stay</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+    </ul>
+  </nav>
+
+  
+  <header class="hero">
+    <div class="hero-bg">
+      <div class="hero-overlay"></div>
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80" alt="Tropical beach at golden hour" class="hero-img" />
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Freedom to explore the world</p>
+      <h1 class="hero-title">
+        Travel is not<br />
+        <em>a destination.</em><br />
+        It's a way of life.
+      </h1>
+      <p class="hero-sub">Discover hidden gems. Book seamlessly. Experience authentically.</p>
+      <div class="hero-cta">
+        <a href="destinations.html" class="btn btn-primary">Explore Destinations</a>
+        <a href="book.html" class="btn btn-ghost">Book Now</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </header>
+
+ 
+  <section class="search-bar-section">
+    <div class="search-card">
+      <div class="search-tabs">
+        <button class="tab active" data-tab="hotels">Hotels</button>
+        <button class="tab" data-tab="flights">Flights</button>
+        <button class="tab" data-tab="packages">Packages</button>
+      </div>
+      <div class="search-fields">
+        <div class="field">
+          <label><i class="fa-solid fa-location-dot"></i> Destination</label>
+          <input type="text" placeholder="Where to?" />
+        </div>
+        <div class="field">
+          <label><i class="fa-regular fa-calendar"></i> Check-in</label>
+          <input type="date" />
+        </div>
+        <div class="field">
+          <label><i class="fa-regular fa-calendar-check"></i> Check-out</label>
+          <input type="date" />
+        </div>
+        <div class="field">
+          <label><i class="fa-solid fa-users"></i> Guests</label>
+          <input type="number" min="1" value="2" />
+        </div>
+        <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section featured">
+    <div class="section-header">
+      <p class="section-eyebrow">Handpicked for you</p>
+      <h2 class="section-title">Trending Destinations</h2>
+    </div>
+    <div class="cards-grid">
+      <article class="dest-card" style="--delay:0s">
+        <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80" alt="Paris" />
+        <div class="card-overlay">
+          <div class="card-tag">Europe</div>
+          <h3>Paris, France</h3>
+          <p>The city of light awaits — art, cuisine, and eternal romance.</p>
+          <a href="destinations.html" class="card-link">Discover <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+      <article class="dest-card" style="--delay:0.1s">
+        <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=600&q=80" alt="Bali" />
+        <div class="card-overlay">
+          <div class="card-tag">Asia</div>
+          <h3>Bali, Indonesia</h3>
+          <p>Temples, terraces, and tranquillity in the island of the gods.</p>
+          <a href="destinations.html" class="card-link">Discover <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+      <article class="dest-card" style="--delay:0.2s">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Santorini" />
+        <div class="card-overlay">
+          <div class="card-tag">Europe</div>
+          <h3>Santorini, Greece</h3>
+          <p>Whitewashed cliffs, blue domes, and sunsets that halt time.</p>
+          <a href="destinations.html" class="card-link">Discover <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+      <article class="dest-card" style="--delay:0.3s">
+        <img src="https://images.unsplash.com/photo-1474044159687-1ee9f3a51722?w=600&q=80" alt="Machu Picchu" />
+        <div class="card-overlay">
+          <div class="card-tag">Americas</div>
+          <h3>Machu Picchu, Peru</h3>
+          <p>Ancient wonder lost in the clouds of the Andes mountains.</p>
+          <a href="destinations.html" class="card-link">Discover <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+    </div>
+    <div class="section-cta">
+      <a href="destinations.html" class="btn btn-outline">View All Destinations</a>
+    </div>
+  </section>
+
+  
+  <section class="section why-us">
+    <div class="why-left">
+      <p class="section-eyebrow">Why Eleutheria</p>
+      <h2 class="section-title">One platform.<br /><em>Every journey.</em></h2>
+      <p class="why-body">Eleutheria consolidates trip discovery, hotel reservations, flight bookings, and destination exploration into one seamless digital experience — so you spend less time planning and more time living.</p>
+      <a href="book.html" class="btn btn-primary">Start Your Journey</a>
+    </div>
+    <div class="why-right">
+      <div class="feature-item">
+        <div class="feature-icon"><i class="fa-solid fa-globe"></i></div>
+        <div>
+          <h4>Global Reach</h4>
+          <p>Thousands of hotels, flights, and experiences across 190+ countries in one place.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon"><i class="fa-solid fa-tag"></i></div>
+        <div>
+          <h4>Best Price Promise</h4>
+          <p>We compare rates in real-time so you always get the most competitive deal.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon"><i class="fa-solid fa-star"></i></div>
+        <div>
+          <h4>Curated Experiences</h4>
+          <p>Hidden gems, off-the-beaten-path escapes, and locally sourced recommendations.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+        <div>
+          <h4>Mobile-First Design</h4>
+          <p>Plan and book on any device, optimised for the way modern travellers move.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="stats-strip">
+    <div class="stat">
+      <span class="stat-num">$622B</span>
+      <span class="stat-label">Global online travel market (2025)</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num">190+</span>
+      <span class="stat-label">Countries covered</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num">56%</span>
+      <span class="stat-label">Bookings via mobile (2024)</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num">9.75%</span>
+      <span class="stat-label">Market CAGR through 2034</span>
+    </div>
+  </section>
+
+
+  <section class="section gems">
+    <div class="gems-inner">
+      <div class="gems-img-col">
+        <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=700&q=80" alt="Hidden gem destination" class="gems-img-main" />
+        <img src="https://images.unsplash.com/photo-1440778303588-435521a205bc?w=400&q=80" alt="Secluded cove" class="gems-img-accent" />
+      </div>
+      <div class="gems-text">
+        <p class="section-eyebrow">Beyond the mainstream</p>
+        <h2 class="section-title">Discover the <em>hidden gems</em> the world keeps to itself.</h2>
+        <p>Our curators travel year-round to source the world's most authentic, under-the-radar experiences — from cliff-side villages in Montenegro to untouched jungle lodges in Borneo. These aren't on the mass-market tours.</p>
+        <a href="destinations.html" class="btn btn-primary">Find Hidden Gems</a>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section testimonials">
+    <div class="section-header">
+      <p class="section-eyebrow">Traveller voices</p>
+      <h2 class="section-title">What our guests say</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p>"Eleutheria changed the way I travel. I booked an entire two-week trip to Japan — hotels, trains, experiences — in one afternoon."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">SC</div>
+          <div>
+            <strong>Sarah C.</strong>
+            <span>New York, USA</span>
+          </div>
+        </div>
+      </div>
+      <div class="review-card featured-review">
+        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p>"The hidden gems section introduced me to a village in Portugal I'd never have found on my own. Absolutely magical. This is what travel should feel like."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">MO</div>
+          <div>
+            <strong>Marco O.</strong>
+            <span>Milan, Italy</span>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+        <p>"Finally a platform that doesn't feel like a spreadsheet. Beautiful design, great deals, and an explore map that actually works. Booking again next month."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">AK</div>
+          <div>
+            <strong>Amira K.</strong>
+            <span>Dubai, UAE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="newsletter">
+    <div class="newsletter-inner">
+      <div class="newsletter-text">
+        <h3>Get inspired. <em>Every week.</em></h3>
+        <p>Hidden deals, new destinations, and travel guides — delivered to your inbox.</p>
+      </div>
+      <div class="newsletter-form">
+        <input type="email" placeholder="your@email.com" />
+        <button class="btn btn-primary">Subscribe</button>
+      </div>
+    </div>
+  </section>
+
+  
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo-text">Eleutheria</span>
+        <p>One platform. Every journey. From the spark of inspiration through to the booked itinerary.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <ul>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="destinations.html">Hidden Gems</a></li>
+            <li><a href="map.html">Explore Map</a></li>
+            <li><a href="stay.html">Hotels & Resorts</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Book</h5>
+          <ul>
+            <li><a href="book.html">Hotels</a></li>
+            <li><a href="book.html">Flights</a></li>
+            <li><a href="book.html">Packages</a></li>
+            <li><a href="book.html">Experiences</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Eleutheria. All rights reserved. Luxury Travel Refined.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

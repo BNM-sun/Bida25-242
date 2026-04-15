@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore Map — Eleutheria</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <style>
+    body { overflow: hidden; }
+    #map { width: 100%; height: 100%; z-index: 1; }
+    .leaflet-popup-content-wrapper {
+      border-radius: 8px;
+      box-shadow: 0 8px 30px rgba(13,27,42,0.2);
+      font-family: 'Jost', sans-serif;
+    }
+    .popup-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: #0d1b2a; margin-bottom: 0.25rem; }
+    .popup-tag { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: #c9a96e; margin-bottom: 0.5rem; }
+    .popup-price { font-size: 0.85rem; color: #6b7280; }
+    .popup-btn {
+      display: inline-block; margin-top: 0.5rem;
+      padding: 0.4rem 1rem; background: #0d1b2a; color: #fff;
+      text-decoration: none; border-radius: 4px; font-size: 0.75rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .map-sidebar::-webkit-scrollbar { width: 4px; }
+    .map-sidebar::-webkit-scrollbar-thumb { background: #e0d9ce; border-radius: 4px; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-text">Eleutheria</span>
+      <span class="logo-sub">Luxury Travel Refined</span>
+    </div>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="book.html">Book Now</a></li>
+      <li><a href="map.html" class="active">Explore Map</a></li>
+      <li><a href="stay.html">Your Stay</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+    </ul>
+  </nav>
+
+  <div class="map-container">
+  
+    <aside class="map-sidebar">
+      <h3>Explore Destinations</h3>
+      <div class="map-search">
+        <input type="text" placeholder="Search destinations..." id="mapSearch" />
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+
+      <div class="map-location-list" id="locationList">
+
+        <div class="map-location-item" data-lat="48.8566" data-lng="2.3522">
+          <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=200&q=70" alt="Paris" />
+          <div class="map-location-info">
+            <h5>Paris, France</h5>
+            <p>Europe · from $899/person</p>
+          </div>
+        </div>
+
+        <div class="map-location-item" data-lat="-8.3405" data-lng="115.0920">
+          <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=200&q=70" alt="Bali" />
+          <div class="map-location-info">
+            <h5>Bali, Indonesia</h5>
+            <p>Asia · from $649/person</p>
+          </div>
+        </div>
+
+        <div class="map-location-item" data-lat="36.3932" data-lng="25.4615">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&q=70" alt="Santorini" />
+          <div class="map-location-info">
+            <h5>Santorini, Greece</h5>
+            <p>Europe · from $1,199/person</p>
+          </div>
+        </div>
+
+        <div class="map-location-item" data-lat="-13.1631" data-lng="-72.5450">
+          <img src="https://images.unsplash.com/photo-1474044159687-1ee9f3a51722?w=200&q=70" alt="Machu Picchu" />
+          <div class="map-location-info">
+            <h5>Machu Picchu, Peru</h5>
+            <p>Americas · from $1,450/person</p>
+          </div>
+        </div>
+
+        <div class="map-location-item" data-lat="35.6762" data-lng="139.6503">
+          <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=200&q=70" alt="Tokyo" />
+          <div class="map-location-info">
+            <h5>Tokyo, Japan</h5>
+            <p>Asia · from $1,099/person</p>
+          </div>
+        </div>
+
+        <div class="map-location-item" data-lat="-19.3428" data-lng="22.8580">
+          <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=200&q=70" alt="Okavango" />
+          <div class="map-location-info">
+            <h5>Okavango Delta, Botswana</h5>
+            <p>Africa · from $2,200/person</p>
+          </div>
+        </div>
+
+      </div>
+    </aside>
+
+   
+    <div id="map"></div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+   
+    const map = L.map('map', { zoomControl: false }).setView([20, 15], 2);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    L.control.zoom({ position: 'bottomright' }).addTo(map);
+
+   
+    const goldIcon = L.divIcon({
+      className: '',
+      html: `<div style="
+        width: 16px; height: 16px;
+        background: #c9a96e;
+        border: 3px solid #0d1b2a;
+        border-radius: 50%;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      "></div>`,
+      iconSize: [16, 16],
+      iconAnchor: [8, 8]
+    });
+
+    const destinations = [
+      { name: 'Paris, France',           lat: 48.8566,  lng: 2.3522,   tag: 'Europe',   price: '$899' },
+      { name: 'Bali, Indonesia',          lat: -8.3405,  lng: 115.092,  tag: 'Asia',     price: '$649' },
+      { name: 'Santorini, Greece',        lat: 36.3932,  lng: 25.4615,  tag: 'Europe',   price: '$1,199' },
+      { name: 'Machu Picchu, Peru',       lat: -13.1631, lng: -72.545,  tag: 'Americas', price: '$1,450' },
+      { name: 'Tokyo, Japan',             lat: 35.6762,  lng: 139.6503, tag: 'Asia',     price: '$1,099' },
+      { name: 'Okavango Delta, Botswana', lat: -19.3428, lng: 22.858,   tag: 'Africa',   price: '$2,200' },
+    ];
+
+    destinations.forEach(d => {
+      const marker = L.marker([d.lat, d.lng], { icon: goldIcon }).addTo(map);
+      marker.bindPopup(`
+        <div class="popup-tag">${d.tag}</div>
+        <div class="popup-title">${d.name}</div>
+        <div class="popup-price">From ${d.price} / person</div>
+        <a href="book.html" class="popup-btn">Book Now</a>
+      `);
+    });
+
+   
+    document.querySelectorAll('.map-location-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const lat = parseFloat(item.dataset.lat);
+        const lng = parseFloat(item.dataset.lng);
+        map.flyTo([lat, lng], 6, { duration: 1.5 });
+      });
+    });
+  </script>
+</body>
+</html>

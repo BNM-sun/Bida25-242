@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Destinations — Eleutheria</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-text">Eleutheria</span>
+      <span class="logo-sub">Luxury Travel Refined</span>
+    </div>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="destinations.html" class="active">Destinations</a></li>
+      <li><a href="book.html">Book Now</a></li>
+      <li><a href="map.html">Explore Map</a></li>
+      <li><a href="stay.html">Your Stay</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+    </ul>
+  </nav>
+
+ 
+  <header class="page-hero">
+    <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1600&q=80" alt="Travel destinations" class="page-hero-img" />
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <p class="section-eyebrow">Explore the world</p>
+      <h1>Destinations</h1>
+    </div>
+  </header>
+
+  
+  <div class="filter-bar">
+    <button class="filter-btn active">All</button>
+    <button class="filter-btn">Europe</button>
+    <button class="filter-btn">Asia</button>
+    <button class="filter-btn">Americas</button>
+    <button class="filter-btn">Africa</button>
+    <button class="filter-btn">Oceania</button>
+    <button class="filter-btn">Hidden Gems</button>
+  </div>
+
+  
+  <section style="padding: 3rem 0 6rem; background: var(--cream);">
+    <div class="dest-grid-full">
+
+      <article class="dest-card-full" data-region="europe">
+        <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=700&q=80" alt="Paris" />
+        <div class="dest-card-body">
+          <div class="card-tag">Europe</div>
+          <h3>Paris, France</h3>
+          <p>The city of light — iconic art, world-class cuisine, and timeless romance on every corner.</p>
+          <div class="dest-card-footer">
+            <div class="dest-price">$899 <span>/ person</span></div>
+            <a href="book.html" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book Now</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dest-card-full" data-region="asia">
+        <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=700&q=80" alt="Bali" />
+        <div class="dest-card-body">
+          <div class="card-tag">Asia</div>
+          <h3>Bali, Indonesia</h3>
+          <p>Terraced rice fields, ancient temples, and a spiritual calm that transforms every visitor.</p>
+          <div class="dest-card-footer">
+            <div class="dest-price">$649 <span>/ person</span></div>
+            <a href="book.html" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book Now</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dest-card-full" data-region="europe">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&q=80" alt="Santorini" />
+        <div class="dest-card-body">
+          <div class="card-tag">Europe · Hidden Gem</div>
+          <h3>Santorini, Greece</h3>
+          <p>Whitewashed cliffs draped in bougainvillea and sunsets that feel like the world's final act.</p>
+          <div class="dest-card-footer">
+            <div class="dest-price">$1,199 <span>/ person</span></div>
+            <a href="book.html" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book Now</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dest-card-full" data-region="americas">
+        <img src="https://images.unsplash.com/photo-1474044159687-1ee9f3a51722?w=700&q=80" alt="Machu Picchu" />
+        <div class="dest-card-body">
+          <div class="card-tag">Americas · Hidden Gem</div>
+          <h3>Machu Picchu, Peru</h3>
+          <p>An ancient Incan citadel set high in the Andes — one of the world's truly breathtaking wonders.</p>
+          <div class="dest-card-footer">
+            <div class="dest-price">$1,450 <span>/ person</span></div>
+            <a href="book.html" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book Now</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dest-card-full" data-region="asia">
+        <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=700&q=80" alt="Tokyo" />
+        <div class="dest-card-body">
+          <div class="card-tag">Asia</div>
+          <h3>Tokyo, Japan</h3>
+          <p>A city of infinite contrasts — ancient shrines beside neon skyscrapers, silence beside spectacle.</p>
+          <div class="dest-card-footer">
+            <div class="dest-price">$1,099 <span>/ person</span></div>
+            <a href="book.html" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book Now</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dest-card-full" data-region="africa">
+        <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=700&q=80" alt="Safari" />
+        <div class="dest-card-body">
+          <div class="card-tag">Africa · Hidden Gem</div>
+          <h3>Okavango Delta, Botswana</h3>
+          <p>One of Africa's last great wildernesses — a UNESCO World Heritage Site of extraordinary biodiversity.</p>
+          <div class="dest-card-footer">
+            <div class="dest-price">$2,200 <span>/ person</span></div>
+            <a href="book.html" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book Now</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo-text">Eleutheria</span>
+        <p>One platform. Every journey.</p>
+        <div class="social-links">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <ul>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="map.html">Explore Map</a></li>
+            <li><a href="stay.html">Your Stay</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Book</h5>
+          <ul>
+            <li><a href="book.html">Hotels</a></li>
+            <li><a href="book.html">Flights</a></li>
+            <li><a href="book.html">Packages</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Eleutheria. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

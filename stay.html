@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Stay — Eleutheria</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-text">Eleutheria</span>
+      <span class="logo-sub">Luxury Travel Refined</span>
+    </div>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="book.html">Book Now</a></li>
+      <li><a href="map.html">Explore Map</a></li>
+      <li><a href="stay.html" class="active">Your Stay</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-hero">
+    <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=1600&q=80" alt="Luxury hotel" class="page-hero-img" />
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <p class="section-eyebrow">Curated stays</p>
+      <h1>Your Stay</h1>
+    </div>
+  </header>
+
+
+  <section class="section" style="background: var(--cream);">
+    <div class="section-header">
+      <p class="section-eyebrow">Browse by category</p>
+      <h2 class="section-title">Where would you like to stay?</h2>
+    </div>
+    <div class="stay-categories container">
+      <div class="stay-cat-card">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=500&q=70" alt="Hotels" />
+        <h4><i class="fa-solid fa-building" style="color:var(--gold);"></i> Luxury Hotels</h4>
+      </div>
+      <div class="stay-cat-card">
+        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=500&q=70" alt="Resorts" />
+        <h4><i class="fa-solid fa-umbrella-beach" style="color:var(--gold);"></i> Beach Resorts</h4>
+      </div>
+      <div class="stay-cat-card">
+        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&q=70" alt="Boutique" />
+        <h4><i class="fa-solid fa-gem" style="color:var(--gold);"></i> Boutique Hotels</h4>
+      </div>
+      <div class="stay-cat-card">
+        <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=500&q=70" alt="Villas" />
+        <h4><i class="fa-solid fa-house" style="color:var(--gold);"></i> Private Villas</h4>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" style="background: var(--cream-warm);">
+    <div class="section-header">
+      <p class="section-eyebrow">Editor's picks</p>
+      <h2 class="section-title">Featured Properties</h2>
+    </div>
+    <div class="dest-grid-full container">
+
+      <article class="dest-card-full">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=700&q=80" alt="The Ritz Paris" />
+        <div class="dest-card-body">
+          <div class="card-tag">Paris, France</div>
+          <h3>The Ritz Paris</h3>
+          <p>A palace of legend on Place Vendôme — where luxury was invented and still reigns supreme.</p>
+          <div class="dest-card-footer">
+            <div class="dest-price">$1,200 <span>/ night</span></div>
+            <a href="book.html" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dest-card-full">
+        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=700&q=80" alt="Bali resort" />
+        <div class="dest-card-body">
+          <div class="card-tag">Bali, Indonesia</div>
+          <h3>Komaneka at Bisma</h3>
+          <p>Perched above the sacred Wos River valley, this boutique resort is pure Balinese soul.</p>
+          <div class="dest-card-footer">
+            <div class="dest-price">$420 <span>/ night</span></div>
+            <a href="book.html" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dest-card-full">
+        <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=700&q=80" alt="Santorini villa" />
+        <div class="dest-card-body">
+          <div class="card-tag">Santorini, Greece</div>
+          <h3>Canaves Oia Epitome</h3>
+          <p>Cave-style suites carved into the caldera cliffs, each with a private pool facing the sea.</p>
+          <div class="dest-card-footer">
+            <div class="dest-price">$860 <span>/ night</span></div>
+            <a href="book.html" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+ 
+  <section class="section" style="background: var(--navy); text-align: center;">
+    <p class="section-eyebrow">What's included</p>
+    <h2 class="section-title" style="color: var(--white); max-width: 600px; margin: 0 auto 3rem;">Every stay comes with our <em>Eleutheria Promise</em></h2>
+    <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; max-width: 900px; margin: 0 auto;">
+      <div style="text-align: center; color: rgba(255,255,255,0.8);">
+        <i class="fa-solid fa-wifi" style="font-size: 2rem; color: var(--gold); margin-bottom: 0.75rem; display: block;"></i>
+        <h4 style="color: var(--white); margin-bottom: 0.25rem;">Free Wi-Fi</h4>
+        <p style="font-size: 0.85rem;">High-speed in every property</p>
+      </div>
+      <div style="text-align: center; color: rgba(255,255,255,0.8);">
+        <i class="fa-solid fa-concierge-bell" style="font-size: 2rem; color: var(--gold); margin-bottom: 0.75rem; display: block;"></i>
+        <h4 style="color: var(--white); margin-bottom: 0.25rem;">24/7 Concierge</h4>
+        <p style="font-size: 0.85rem;">We're always here to help</p>
+      </div>
+      <div style="text-align: center; color: rgba(255,255,255,0.8);">
+        <i class="fa-solid fa-circle-check" style="font-size: 2rem; color: var(--gold); margin-bottom: 0.75rem; display: block;"></i>
+        <h4 style="color: var(--white); margin-bottom: 0.25rem;">Free Cancellation</h4>
+        <p style="font-size: 0.85rem;">Up to 48 hours before arrival</p>
+      </div>
+      <div style="text-align: center; color: rgba(255,255,255,0.8);">
+        <i class="fa-solid fa-tag" style="font-size: 2rem; color: var(--gold); margin-bottom: 0.75rem; display: block;"></i>
+        <h4 style="color: var(--white); margin-bottom: 0.25rem;">Best Price</h4>
+        <p style="font-size: 0.85rem;">Guaranteed rate match</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo-text">Eleutheria</span>
+        <p>One platform. Every journey.</p>
+        <div class="social-links">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <ul>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="map.html">Explore Map</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Eleutheria. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
