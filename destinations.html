@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-<body>
+<body id="destinationsPage">
 
   <nav class="navbar scrolled" id="navbar">
     <div class="nav-logo">
@@ -28,7 +28,6 @@
     </ul>
   </nav>
 
- 
   <header class="page-hero">
     <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1600&q=80" alt="Travel destinations" class="page-hero-img" />
     <div class="page-hero-overlay"></div>
@@ -38,102 +37,220 @@
     </div>
   </header>
 
-  
+  <section style="padding: 2rem 3rem 0; background: var(--white); max-width: 900px; margin: 0 auto; text-align: center;">
+    <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.75;">Browse by region — the same routes power our <a href="book.html" style="color: var(--gold);">Book Now</a> hub (hotels, flights, packages, and experiences). Hidden gems include one carefully chosen quieter jewel per continent.</p>
+  </section>
+
   <div class="filter-bar">
-    <button class="filter-btn active">All</button>
-    <button class="filter-btn">Europe</button>
-    <button class="filter-btn">Asia</button>
-    <button class="filter-btn">Americas</button>
-    <button class="filter-btn">Africa</button>
-    <button class="filter-btn">Oceania</button>
-    <button class="filter-btn">Hidden Gems</button>
+    <button type="button" class="filter-btn active" data-filter="all">All</button>
+    <button type="button" class="filter-btn" data-filter="europe">Europe</button>
+    <button type="button" class="filter-btn" data-filter="asia">Asia</button>
+    <button type="button" class="filter-btn" data-filter="americas">Americas</button>
+    <button type="button" class="filter-btn" data-filter="africa">Africa</button>
+    <button type="button" class="filter-btn" data-filter="oceania">Oceania</button>
+    <button type="button" class="filter-btn" data-filter="gems">Hidden Gems</button>
   </div>
 
-  
   <section style="padding: 3rem 0 6rem; background: var(--cream);">
     <div class="dest-grid-full">
 
-      <article class="dest-card-full" data-region="europe">
+      <article class="dest-card-full" data-region="europe" data-gem="false" data-dest-id="paris-fr">
         <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=700&q=80" alt="Paris" />
         <div class="dest-card-body">
-          <div class="card-tag">Europe</div>
+          <div class="card-tag">Europe · Signature</div>
           <h3>Paris, France</h3>
-          <p>The city of light — iconic art, world-class cuisine, and timeless romance on every corner.</p>
+          <p>Art, haute cuisine, and café terraces — the enduring blueprint for romantic city life.</p>
           <div class="dest-card-footer">
-            <div class="dest-price">$899 <span>/ person</span></div>
-            <a href="book.html" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book Now</a>
+            <div class="dest-price">$899 <span>/ person from</span></div>
+            <a href="book.html?dest=paris-fr" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book Now</a>
           </div>
         </div>
       </article>
 
-      <article class="dest-card-full" data-region="asia">
-        <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=700&q=80" alt="Bali" />
+      <article class="dest-card-full" data-region="asia" data-gem="false" data-dest-id="bali-id">
+        <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=700&q=80" alt="Bali" />
         <div class="dest-card-body">
-          <div class="card-tag">Asia</div>
+          <div class="card-tag">Asia · Signature</div>
           <h3>Bali, Indonesia</h3>
-          <p>Terraced rice fields, ancient temples, and a spiritual calm that transforms every visitor.</p>
+          <p>Terraced rice fields, temple rituals, and slow wellness in the Island of the Gods.</p>
           <div class="dest-card-footer">
-            <div class="dest-price">$649 <span>/ person</span></div>
-            <a href="book.html" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book Now</a>
+            <div class="dest-price">$649 <span>/ person from</span></div>
+            <a href="book.html?dest=bali-id" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book Now</a>
           </div>
         </div>
       </article>
 
-      <article class="dest-card-full" data-region="europe">
-        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&q=80" alt="Santorini" />
+      <article class="dest-card-full" data-region="europe" data-gem="false" data-dest-id="santorini-gr">
+        <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac696?w=700&q=80" alt="Santorini" />
         <div class="dest-card-body">
-          <div class="card-tag">Europe · Hidden Gem</div>
+          <div class="card-tag">Europe · Signature</div>
           <h3>Santorini, Greece</h3>
-          <p>Whitewashed cliffs draped in bougainvillea and sunsets that feel like the world's final act.</p>
+          <p>Caldera views, volcanic wines, and sunsets that turn the Aegean to gold.</p>
           <div class="dest-card-footer">
-            <div class="dest-price">$1,199 <span>/ person</span></div>
-            <a href="book.html" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book Now</a>
+            <div class="dest-price">$1,199 <span>/ person from</span></div>
+            <a href="book.html?dest=santorini-gr" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book Now</a>
           </div>
         </div>
       </article>
 
-      <article class="dest-card-full" data-region="americas">
-        <img src="https://images.unsplash.com/photo-1474044159687-1ee9f3a51722?w=700&q=80" alt="Machu Picchu" />
+      <article class="dest-card-full" data-region="americas" data-gem="false" data-dest-id="machu-pe">
+        <img src="https://images.unsplash.com/photo-1587595431973-160b0eae9325?w=700&q=80" alt="Machu Picchu" />
         <div class="dest-card-body">
-          <div class="card-tag">Americas · Hidden Gem</div>
+          <div class="card-tag">Americas · Signature</div>
           <h3>Machu Picchu, Peru</h3>
-          <p>An ancient Incan citadel set high in the Andes — one of the world's truly breathtaking wonders.</p>
+          <p>Cloud forests and Incan engineering — one of the world's great archaeological reveals.</p>
           <div class="dest-card-footer">
-            <div class="dest-price">$1,450 <span>/ person</span></div>
-            <a href="book.html" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book Now</a>
+            <div class="dest-price">$1,450 <span>/ person from</span></div>
+            <a href="book.html?dest=machu-pe" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book Now</a>
           </div>
         </div>
       </article>
 
-      <article class="dest-card-full" data-region="asia">
+      <article class="dest-card-full" data-region="asia" data-gem="false" data-dest-id="tokyo-jp">
         <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=700&q=80" alt="Tokyo" />
         <div class="dest-card-body">
-          <div class="card-tag">Asia</div>
+          <div class="card-tag">Asia · Signature</div>
           <h3>Tokyo, Japan</h3>
-          <p>A city of infinite contrasts — ancient shrines beside neon skyscrapers, silence beside spectacle.</p>
+          <p>Minimal shrines, maximal neon — precision and poetry in a mega-city unlike any other.</p>
           <div class="dest-card-footer">
-            <div class="dest-price">$1,099 <span>/ person</span></div>
-            <a href="book.html" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book Now</a>
+            <div class="dest-price">$1,099 <span>/ person from</span></div>
+            <a href="book.html?dest=tokyo-jp" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book Now</a>
           </div>
         </div>
       </article>
 
-      <article class="dest-card-full" data-region="africa">
-        <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=700&q=80" alt="Safari" />
+      <article class="dest-card-full" data-region="africa" data-gem="false" data-dest-id="okavango-bw">
+        <img src="https://images.unsplash.com/photo-1516026672322-bc92d7a29d7c?w=700&q=80" alt="Okavango Delta" />
+        <div class="dest-card-body">
+          <div class="card-tag">Africa · Signature</div>
+          <h3>Okavango Delta, Botswana</h3>
+          <p>Waterways, big game, and lantern-lit camps — Africa's incomparable inland delta.</p>
+          <div class="dest-card-footer">
+            <div class="dest-price">$2,200 <span>/ person from</span></div>
+            <a href="book.html?dest=okavango-bw" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book Now</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dest-card-full" data-region="europe" data-gem="true" data-dest-id="hallstatt-at">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&q=80" alt="Hallstatt" />
+        <div class="dest-card-body">
+          <div class="card-tag">Europe · Hidden Gem</div>
+          <h3>Hallstatt, Austria</h3>
+          <p>Alpine lake reflections and salt-mine history — storybook Austria without the crowds.</p>
+          <div class="dest-card-footer">
+            <div class="dest-price">$979 <span>/ person from</span></div>
+            <a href="book.html?dest=hallstatt-at" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book Now</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dest-card-full" data-region="asia" data-gem="true" data-dest-id="luang-la">
+        <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=700&q=80" alt="Luang Prabang" />
+        <div class="dest-card-body">
+          <div class="card-tag">Asia · Hidden Gem</div>
+          <h3>Luang Prabang, Laos</h3>
+          <p>Mekong mist, golden temples, and the gentle rhythm of Laos' spiritual capital.</p>
+          <div class="dest-card-footer">
+            <div class="dest-price">$849 <span>/ person from</span></div>
+            <a href="book.html?dest=luang-la" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book Now</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dest-card-full" data-region="americas" data-gem="false" data-dest-id="rio-br">
+        <img src="https://images.unsplash.com/photo-1483729558449-99ef09a8cfe3?w=700&q=80" alt="Rio de Janeiro" />
+        <div class="dest-card-body">
+          <div class="card-tag">Americas · Signature</div>
+          <h3>Rio de Janeiro, Brazil</h3>
+          <p>Forest-meets-ocean drama, samba pulse, and icons from Corcovado to Ipanema.</p>
+          <div class="dest-card-footer">
+            <div class="dest-price">$1,199 <span>/ person from</span></div>
+            <a href="book.html?dest=rio-br" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book Now</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dest-card-full" data-region="americas" data-gem="true" data-dest-id="valparaiso-cl">
+        <img src="https://images.unsplash.com/photo-1518471150596-29bd640482f6?w=700&q=80" alt="Valparaíso" />
+        <div class="dest-card-body">
+          <div class="card-tag">Americas · Hidden Gem</div>
+          <h3>Valparaíso, Chile</h3>
+          <p>Funiculars, street murals, and bohemian hills overlooking the Pacific.</p>
+          <div class="dest-card-footer">
+            <div class="dest-price">$1,099 <span>/ person from</span></div>
+            <a href="book.html?dest=valparaiso-cl" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book Now</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dest-card-full" data-region="africa" data-gem="false" data-dest-id="cape-town-za">
+        <img src="https://images.unsplash.com/photo-1580060839134-b23587e793bc?w=700&q=80" alt="Cape Town" />
+        <div class="dest-card-body">
+          <div class="card-tag">Africa · Signature</div>
+          <h3>Cape Town, South Africa</h3>
+          <p>Table Mountain, Cape wines, and the edge where two oceans meet.</p>
+          <div class="dest-card-footer">
+            <div class="dest-price">$1,399 <span>/ person from</span></div>
+            <a href="book.html?dest=cape-town-za" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book Now</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dest-card-full" data-region="africa" data-gem="true" data-dest-id="lamu-ke">
+        <img src="https://images.unsplash.com/photo-1590523741374-b733cca28188?w=700&q=80" alt="Lamu" />
         <div class="dest-card-body">
           <div class="card-tag">Africa · Hidden Gem</div>
-          <h3>Okavango Delta, Botswana</h3>
-          <p>One of Africa's last great wildernesses — a UNESCO World Heritage Site of extraordinary biodiversity.</p>
+          <h3>Lamu Island, Kenya</h3>
+          <p>Swahili dhows, car-free lanes, and UNESCO stone architecture on the Indian Ocean.</p>
           <div class="dest-card-footer">
-            <div class="dest-price">$2,200 <span>/ person</span></div>
-            <a href="book.html" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book Now</a>
+            <div class="dest-price">$1,699 <span>/ person from</span></div>
+            <a href="book.html?dest=lamu-ke" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book Now</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dest-card-full" data-region="oceania" data-gem="false" data-dest-id="sydney-au">
+        <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=700&q=80" alt="Sydney" />
+        <div class="dest-card-body">
+          <div class="card-tag">Oceania · Signature</div>
+          <h3>Sydney, Australia</h3>
+          <p>Harbour icons, coastal walks, and a confident outdoor lifestyle year-round.</p>
+          <div class="dest-card-footer">
+            <div class="dest-price">$1,599 <span>/ person from</span></div>
+            <a href="book.html?dest=sydney-au" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book Now</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dest-card-full" data-region="oceania" data-gem="false" data-dest-id="fiji-fj">
+        <img src="https://images.unsplash.com/photo-1516819768401-94eAA6405418?w=700&q=80" alt="Fiji" />
+        <div class="dest-card-body">
+          <div class="card-tag">Oceania · Signature</div>
+          <h3>Fiji</h3>
+          <p>Coral lagoons, bure bungalows, and welcome songs that reset every clock.</p>
+          <div class="dest-card-footer">
+            <div class="dest-price">$1,299 <span>/ person from</span></div>
+            <a href="book.html?dest=fiji-fj" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book Now</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dest-card-full" data-region="oceania" data-gem="true" data-dest-id="rotorua-nz">
+        <img src="https://images.unsplash.com/photo-1469521669194-babb45599def?w=700&q=80" alt="Rotorua" />
+        <div class="dest-card-body">
+          <div class="card-tag">Oceania · Hidden Gem</div>
+          <h3>Rotorua, New Zealand</h3>
+          <p>Geothermal wonderland — Māori culture, mud pools, and ancient forests next door.</p>
+          <div class="dest-card-footer">
+            <div class="dest-price">$999 <span>/ person from</span></div>
+            <a href="book.html?dest=rotorua-nz" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;">Book Now</a>
           </div>
         </div>
       </article>
 
     </div>
   </section>
-
 
   <footer class="footer">
     <div class="footer-top">
@@ -158,7 +275,7 @@
         <div class="footer-col">
           <h5>Book</h5>
           <ul>
-            <li><a href="book.html">Hotels</a></li>
+            <li><a href="book.html">Hotels &amp; more</a></li>
             <li><a href="book.html">Flights</a></li>
             <li><a href="book.html">Packages</a></li>
           </ul>
@@ -173,7 +290,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Eleutheria. All rights reserved.</p>
+      <p>&copy; 2026 Eleutheria. All rights reserved.</p>
     </div>
   </footer>
 

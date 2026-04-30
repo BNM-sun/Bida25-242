@@ -40,7 +40,7 @@
   <section style="background: var(--cream); padding: 4rem 2rem 6rem;">
     <div class="feedback-layout">
 
-      <!-- FEEDBACK FORM -->
+      
       <div class="feedback-card">
         <h2>Leave a Review</h2>
         <p>Help us improve and let fellow travellers know about your Eleutheria experience.</p>
@@ -115,7 +115,7 @@
         </button>
       </div>
 
-      <!-- SIDEBAR — RECENT REVIEWS -->
+      
       <div style="margin-top: 3rem;">
         <p class="section-eyebrow">Recent reviews</p>
         <h3 style="color: var(--navy); margin-bottom: 2rem; font-size: 1.5rem;">What travellers are saying</h3>
@@ -202,22 +202,5 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script>
-   
-    const starBtns = document.querySelectorAll('.star-btn');
-    let selectedRating = 0;
-    starBtns.forEach((btn, idx) => {
-      btn.addEventListener('click', () => {
-        selectedRating = idx;
-        starBtns.forEach((s, i) => s.classList.toggle('lit', i <= idx));
-      });
-      btn.addEventListener('mouseover', () => {
-        starBtns.forEach((s, i) => s.classList.toggle('lit', i <= idx));
-      });
-    });
-    document.querySelector('.rating-group').addEventListener('mouseleave', () => {
-      starBtns.forEach((s, i) => s.classList.toggle('lit', i <= selectedRating - 1));
-    });
-  </script>
 </body>
 </html>

@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-<body>
+<body class="book-page" id="bookPage">
 
   <nav class="navbar scrolled" id="navbar">
     <div class="nav-logo">
@@ -29,7 +29,7 @@
   </nav>
 
   <header class="page-hero">
-    <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1600&q=80" alt="Hotel" class="page-hero-img" />
+    <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1600&q=80" alt="Travel booking" class="page-hero-img" />
     <div class="page-hero-overlay"></div>
     <div class="page-hero-content">
       <p class="section-eyebrow">Seamless booking</p>
@@ -37,150 +37,290 @@
     </div>
   </header>
 
-  <!-- BOOKING TYPE TABS -->
-  <div style="background: var(--white); border-bottom: 1px solid var(--cream-warm); padding: 0 3rem; display: flex; gap: 0; position: sticky; top: 80px; z-index: 5;">
-    <button class="tab active" style="padding: 1rem 1.4rem;">Hotels</button>
-    <button class="tab" style="padding: 1rem 1.4rem;">Flights</button>
-    <button class="tab" style="padding: 1rem 1.4rem;">Packages</button>
-    <button class="tab" style="padding: 1rem 1.4rem;">Experiences</button>
+  <section class="currency-suite" aria-label="Currency tools">
+    <div class="currency-suite-inner">
+      <h4><i class="fa-solid fa-coins" style="color: var(--gold); margin-right: 0.35rem;"></i> Currency</h4>
+      <div>
+        <div class="display-currency-row">
+          <label for="displayCurrency">Show totals in</label>
+          <select id="displayCurrency" name="displayCurrency"></select>
+        </div>
+        <p class="fx-rate-hint" id="displayCurrencyHint"></p>
+      </div>
+      <div>
+        <label class="display-currency-row" style="margin-bottom: 0.35rem;">Quick converter</label>
+        <div class="fx-row">
+          <input type="number" id="fxAmount" value="100" min="0" step="1" aria-label="Amount" />
+          <select id="fxFrom" aria-label="From currency"></select>
+          <span class="fx-arrow">→</span>
+          <select id="fxTo" aria-label="To currency"></select>
+        </div>
+        <p class="fx-result" id="fxResult"></p>
+        <p class="fx-rate-hint" id="fxCrossHint"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="book-inspire" aria-labelledby="inspireHeading">
+    <div class="book-inspire-header">
+      <h2 id="inspireHeading">Destinations by region</h2>
+      <p>Signature routes inspired by our map — plus a hidden gem in every region. Tap a card to load it into your booking.</p>
+    </div>
+    <div class="region-filters" id="regionFilters" role="tablist" aria-label="Filter by region">
+      <button type="button" class="region-filter-btn active" data-region="all">All</button>
+      <button type="button" class="region-filter-btn" data-region="europe">Europe</button>
+      <button type="button" class="region-filter-btn" data-region="asia">Asia</button>
+      <button type="button" class="region-filter-btn" data-region="americas">Americas</button>
+      <button type="button" class="region-filter-btn" data-region="africa">Africa</button>
+      <button type="button" class="region-filter-btn" data-region="oceania">Oceania</button>
+    </div>
+    <p class="subsection-label">Signature destinations</p>
+    <div class="book-pick-grid" id="bookPickGridTourist"></div>
+    <p class="subsection-label">Hidden gems</p>
+    <div class="book-pick-grid" id="bookPickGridGems"></div>
+  </section>
+
+  <div class="book-tab-strip" id="bookTabStrip" role="tablist" aria-label="Booking type">
+    <button type="button" class="book-tab active" data-panel="hotels" role="tab" aria-selected="true">Hotels</button>
+    <button type="button" class="book-tab" data-panel="flights" role="tab" aria-selected="false">Flights</button>
+    <button type="button" class="book-tab" data-panel="packages" role="tab" aria-selected="false">Packages</button>
+    <button type="button" class="book-tab" data-panel="experiences" role="tab" aria-selected="false">Experiences</button>
   </div>
 
-  <!-- BOOKING LAYOUT -->
   <section style="background: var(--cream); padding: 2rem 0 6rem;">
     <div class="booking-layout">
 
-      <!-- FORM -->
-      <div class="booking-form-panel">
-        <h2>Hotel Booking</h2>
+      <div class="booking-form-panel-wrap">
 
-        <div class="form-row">
-          <div class="form-group">
-            <label>First Name</label>
-            <input type="text" placeholder="John" />
+        <div class="book-panel active" data-panel="hotels" role="tabpanel">
+          <div class="booking-form-panel">
+            <h2>Hotels — top picks by destination</h2>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin: -1rem 0 1.25rem;">Highly rated partner properties — nightly rates update in your summary by destination and room type.</p>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="hotelFirstName">First Name</label>
+                <input type="text" id="hotelFirstName" placeholder="John" />
+              </div>
+              <div class="form-group">
+                <label for="hotelLastName">Last Name</label>
+                <input type="text" id="hotelLastName" placeholder="Doe" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="hotelEmail">Email Address</label>
+              <input type="email" id="hotelEmail" placeholder="john@example.com" />
+            </div>
+
+            <div class="form-group">
+              <label for="bookDestinationHotels">Destination</label>
+              <select id="bookDestinationHotels" class="book-destination-select"></select>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="hotelCheckIn">Check-in Date</label>
+                <input type="date" id="hotelCheckIn" />
+              </div>
+              <div class="form-group">
+                <label for="hotelCheckOut">Check-out Date</label>
+                <input type="date" id="hotelCheckOut" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="hotelAdults">Adults</label>
+                <input type="number" id="hotelAdults" min="1" value="2" />
+              </div>
+              <div class="form-group">
+                <label for="hotelChildren">Children</label>
+                <input type="number" id="hotelChildren" min="0" value="0" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="hotelRoomType">Room Type</label>
+              <select id="hotelRoomType">
+                <option value="standard">Standard Room</option>
+                <option value="deluxe">Deluxe Room</option>
+                <option value="junior">Junior Suite</option>
+                <option value="presidential">Presidential Suite</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="hotelNotes">Special Requests</label>
+              <textarea id="hotelNotes" rows="3" placeholder="Early check-in, dietary preferences, accessibility needs..."></textarea>
+            </div>
+
+            <button type="button" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 1rem; font-size: 0.9rem;">
+              <i class="fa-solid fa-lock"></i> Confirm Booking
+            </button>
+
+            <p style="font-size: 0.75rem; text-align: center; margin-top: 0.75rem; color: var(--text-muted);">
+              <i class="fa-solid fa-shield-halved"></i> Secure, encrypted checkout. No hidden fees.
+            </p>
           </div>
-          <div class="form-group">
-            <label>Last Name</label>
-            <input type="text" placeholder="Doe" />
+        </div>
+
+        <div class="book-panel" data-panel="flights" role="tabpanel" hidden>
+          <div class="booking-form-panel">
+            <h2>Flights</h2>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin: -1rem 0 1.25rem;">Estimated fares to your chosen hub — adjust class and party size; summary follows your destination.</p>
+
+            <div class="form-group">
+              <label for="flightOrigin">Departing from</label>
+              <input type="text" id="flightOrigin" placeholder="City or airport (e.g. New York JFK)" />
+            </div>
+
+            <div class="form-group">
+              <label for="bookDestinationFlights">Destination</label>
+              <select id="bookDestinationFlights" class="book-destination-select"></select>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="flightDepart">Departure</label>
+                <input type="date" id="flightDepart" />
+              </div>
+              <div class="form-group">
+                <label for="flightReturn">Return</label>
+                <input type="date" id="flightReturn" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="flightClass">Cabin</label>
+              <select id="flightClass">
+                <option value="economy">Economy</option>
+                <option value="premium">Premium Economy</option>
+                <option value="business">Business</option>
+                <option value="first">First</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="flightAdults">Adults</label>
+                <input type="number" id="flightAdults" min="1" value="2" />
+              </div>
+              <div class="form-group">
+                <label for="flightChildren">Children</label>
+                <input type="number" id="flightChildren" min="0" value="0" />
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 1rem;">
+              <i class="fa-solid fa-paper-plane"></i> Hold flights &amp; continue
+            </button>
           </div>
         </div>
 
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" placeholder="john@example.com" />
-        </div>
+        <div class="book-panel" data-panel="packages" role="tabpanel" hidden>
+          <div class="booking-form-panel">
+            <h2>Packages</h2>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin: -1rem 0 1.25rem;">Curated land packages — transfers, core tours, and premium hotels bundled by destination.</p>
 
-        <div class="form-group">
-          <label>Destination</label>
-          <select>
-            <option value="">Select a destination</option>
-            <option>Paris, France</option>
-            <option>Bali, Indonesia</option>
-            <option>Santorini, Greece</option>
-            <option>Machu Picchu, Peru</option>
-            <option>Tokyo, Japan</option>
-            <option>Okavango Delta, Botswana</option>
-          </select>
-        </div>
+            <div class="form-group">
+              <label for="bookDestinationPackages">Destination</label>
+              <select id="bookDestinationPackages" class="book-destination-select"></select>
+            </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label>Check-in Date</label>
-            <input type="date" />
+            <div class="form-group">
+              <label for="packageTier">Package tier</label>
+              <select id="packageTier">
+                <option value="essential">Essential — core inclusions</option>
+                <option value="luxe" selected>Luxe — upgrades &amp; private transfers</option>
+                <option value="reserve">Reserve — all-in champagne service</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="packageStart">Start date</label>
+                <input type="date" id="packageStart" />
+              </div>
+              <div class="form-group">
+                <label for="packageEnd">End date</label>
+                <input type="date" id="packageEnd" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="packageAdults">Adults</label>
+                <input type="number" id="packageAdults" min="1" value="2" />
+              </div>
+              <div class="form-group">
+                <label for="packageChildren">Children</label>
+                <input type="number" id="packageChildren" min="0" value="0" />
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 1rem;">
+              <i class="fa-solid fa-suitcase"></i> Request package quote
+            </button>
           </div>
-          <div class="form-group">
-            <label>Check-out Date</label>
-            <input type="date" />
+        </div>
+
+        <div class="book-panel" data-panel="experiences" role="tabpanel" hidden>
+          <div class="booking-form-panel">
+            <h2>Experiences</h2>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin: -1rem 0 1.25rem;">Day tours and immersive moments — priced per party for the selected destination.</p>
+
+            <div class="form-group">
+              <label for="bookDestinationExperiences">Destination</label>
+              <select id="bookDestinationExperiences" class="book-destination-select"></select>
+            </div>
+
+            <div class="form-group">
+              <label for="experienceSelect">Experience</label>
+              <select id="experienceSelect"></select>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="experienceDate">Date</label>
+                <input type="date" id="experienceDate" />
+              </div>
+              <div class="form-group">
+                <label for="experienceGuests">Guests</label>
+                <input type="number" id="experienceGuests" min="1" value="2" />
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 1rem;">
+              <i class="fa-solid fa-ticket"></i> Add experience
+            </button>
           </div>
         </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label>Adults</label>
-            <input type="number" min="1" value="2" />
-          </div>
-          <div class="form-group">
-            <label>Children</label>
-            <input type="number" min="0" value="0" />
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Room Type</label>
-          <select>
-            <option>Standard Room</option>
-            <option>Deluxe Room</option>
-            <option>Junior Suite</option>
-            <option>Presidential Suite</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label>Special Requests</label>
-          <textarea rows="3" placeholder="Early check-in, dietary preferences, accessibility needs..."></textarea>
-        </div>
-
-        <button class="btn btn-primary" style="width: 100%; justify-content: center; padding: 1rem; font-size: 0.9rem;">
-          <i class="fa-solid fa-lock"></i> Confirm Booking
-        </button>
-
-        <p style="font-size: 0.75rem; text-align: center; margin-top: 0.75rem; color: var(--text-muted);">
-          <i class="fa-solid fa-shield-halved"></i> Secure, encrypted checkout. No hidden fees.
-        </p>
       </div>
 
-      <!-- SUMMARY SIDEBAR -->
       <div class="booking-summary">
         <h3>Booking Summary</h3>
+        <p style="font-size: 0.78rem; color: rgba(255,255,255,0.55); margin: -0.75rem 0 1rem;" id="sumBookingMode">Hotel stay</p>
 
-        <div class="summary-line">
-          <span>Destination</span>
-          <span>Paris, France</span>
-        </div>
-        <div class="summary-line">
-          <span>Hotel</span>
-          <span>Le Grand Palais</span>
-        </div>
-        <div class="summary-line">
-          <span>Room Type</span>
-          <span>Deluxe Room</span>
-        </div>
-        <div class="summary-line">
-          <span>Check-in</span>
-          <span>15 Jul 2025</span>
-        </div>
-        <div class="summary-line">
-          <span>Check-out</span>
-          <span>22 Jul 2025</span>
-        </div>
-        <div class="summary-line">
-          <span>Duration</span>
-          <span>7 nights</span>
-        </div>
-        <div class="summary-line">
-          <span>Guests</span>
-          <span>2 adults</span>
-        </div>
+        <div id="bookingSummaryLines"></div>
 
         <div style="border-top: 1px solid rgba(255,255,255,0.12); margin-top: 1.25rem; padding-top: 0.75rem;">
           <div class="summary-line">
-            <span>Room (7 × $128)</span>
-            <span>$896</span>
-          </div>
-          <div class="summary-line">
-            <span>Taxes & Fees</span>
-            <span>$89</span>
+            <span id="sumFeeLabel">Taxes &amp; fees</span>
+            <span id="sumFeeVal">—</span>
           </div>
         </div>
 
         <div class="summary-total" style="margin-top: 1rem;">
           <span>Total</span>
-          <span class="price">$985</span>
+          <span class="price" id="sumTotalDisplay">—</span>
         </div>
 
         <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(201,169,110,0.12); border-radius: 6px; border: 1px solid rgba(201,169,110,0.2);">
           <p style="font-size: 0.78rem; color: rgba(255,255,255,0.6);">
             <i class="fa-solid fa-circle-check" style="color: var(--gold);"></i>
-            Free cancellation up to 48 hours before check-in.
+            Free cancellation up to 48 hours before travel where noted.
           </p>
         </div>
       </div>
@@ -216,7 +356,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Eleutheria. All rights reserved.</p>
+      <p>&copy; 2026 Eleutheria. All rights reserved.</p>
     </div>
   </footer>
 
