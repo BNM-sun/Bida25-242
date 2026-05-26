@@ -55,7 +55,7 @@ document.querySelectorAll('.feature-item, .stat, .review-card, .dest-card-full')
   revealObserver.observe(el);
 });
 
-/* --- Shared destinations (book + destinations pages) --- */
+
 const BOOK_DESTINATIONS = [
   { id: 'paris-fr', name: 'Paris, France', region: 'europe', hiddenGem: false,
     blurb: 'Art, haute cuisine, and café terraces — the enduring blueprint for romantic city life.',
